@@ -13,13 +13,27 @@
 
     <h1>FIX Message Parser</h1>
 
-    <form id="fixForm" method="POST">
+    <form id="fixForm" method="POST" action="/parse">
       <textarea name="fixMessage" id="fixMessage" rows="10" cols="50" placeholder="Enter your FIX message"></textarea>
       <br>
       <button type="submit" class="submit-btn">Parse FIX Message</button>
     </form>
 
-    <!-- Table to display parsed FIX message -->
+    <!-- Table to display parsed FIX messages (single column for field names) -->
+    <div class="message-list">
+      <table id="parsedMessages" class="styled-table">
+        <thead>
+          <tr>
+            <th>Parsed Messages</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Parsed messages will go here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Main table to display selected parsed FIX message details -->
     <table id="parsedTable" class="styled-table">
       <thead>
         <tr>
@@ -30,7 +44,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Parsed data will go here -->
+        <!-- Detailed parsed data will go here -->
       </tbody>
     </table>
   </div>
