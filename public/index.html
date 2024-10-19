@@ -19,6 +19,15 @@
       <button type="submit" class="submit-btn">Parse FIX Message</button>
     </form>
 
+    <!-- Dropdown for filtering unique entries -->
+    <div class="filter-container">
+      <label for="filterDropdown">Filter by Message Type:</label>
+      <select id="filterDropdown">
+        <option value="">All</option>
+        <!-- Unique message types will be added here -->
+      </select>
+    </div>
+
     <!-- Wrapper for parsed messages table -->
     <div class="message-list">
       <h2>Parsed Messages</h2>

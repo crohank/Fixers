@@ -264,6 +264,8 @@
 
 //263
 const form = document.getElementById('fixForm');
+const filterDropdown = document.getElementById('filterDropdown');
+
 form.addEventListener('submit', async function (event) {
   event.preventDefault();
 
@@ -297,10 +299,10 @@ form.addEventListener('submit', async function (event) {
   tableBody.innerHTML = ''; // Clear any existing rows
 
   // Populate the message list table with field names
+  const uniqueFieldNames = new Set(); // To store unique field names
   parsedMessages.forEach((msg, index) => {
     const tr = document.createElement('tr');
-    //const fieldName = msg[0]?.fieldName || 'Unknown'; // Get the field name of the first field
-    const fieldName = msg[2]?.lookup || 'Unknown'; // Get the field name of the first field
+    const fieldName = msg[2]?.lookup || 'Unknown'; // Get the field name of the MsgType
 
     tr.innerHTML = `<td>${fieldName}</td>`;
     tr.addEventListener('click', () => {
@@ -308,6 +310,32 @@ form.addEventListener('submit', async function (event) {
     });
 
     messageList.appendChild(tr);
+    uniqueFieldNames.add(fieldName); // Add field name to the set for uniqueness
+  });
+
+  // Populate the filter dropdown
+  filterDropdown.innerHTML = '<option value="">All</option>'; // Reset the dropdown
+  uniqueFieldNames.forEach(fieldName => {
+    const option = document.createElement('option');
+    option.value = fieldName;
+    option.textContent = fieldName;
+    filterDropdown.appendChild(option);
+  });
+});
+
+// Filter the parsed messages based on the dropdown selection
+filterDropdown.addEventListener('change', function () {
+  const selectedValue = this.value;
+  const messageList = document.querySelector('#parsedMessages tbody');
+  const rows = messageList.querySelectorAll('tr');
+
+  rows.forEach(row => {
+    const cellText = row.innerText;
+    if (selectedValue === "" || cellText.includes(selectedValue)) {
+      row.style.display = ''; // Show the row
+    } else {
+      row.style.display = 'none'; // Hide the row
+    }
   });
 });
 
@@ -327,6 +355,7 @@ function populateDetails(parsedMessage) {
     tableBody.appendChild(tr);
   });
 }
+
 
 
 

@@ -82,6 +82,14 @@ textarea:focus {
     font-size: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+.filter-container {
+    margin: 20px 0; /* Add some margin for spacing */
+    text-align: left; /* Align label and dropdown to the left */
+}
+
+.filter-container label {
+    margin-right: 10px; /* Add space between label and dropdown */
+}
 
 .styled-table th, .styled-table td {
     padding: 12px 15px;
@@ -122,3 +130,4 @@ textarea:focus {
         font-size: 0.9rem;
     }
 }
+
