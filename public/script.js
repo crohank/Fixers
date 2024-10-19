@@ -299,7 +299,8 @@ form.addEventListener('submit', async function (event) {
   // Populate the message list table with field names
   parsedMessages.forEach((msg, index) => {
     const tr = document.createElement('tr');
-    const fieldName = msg[0]?.fieldName || 'Unknown'; // Get the field name of the first field
+    //const fieldName = msg[0]?.fieldName || 'Unknown'; // Get the field name of the first field
+    const fieldName = msg[2]?.lookup || 'Unknown'; // Get the field name of the first field
 
     tr.innerHTML = `<td>${fieldName}</td>`;
     tr.addEventListener('click', () => {
