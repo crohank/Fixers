@@ -66,13 +66,21 @@ textarea:focus {
 }
 
 /* Table styles */
+.table-container {
+    max-height: 150px; /* Set a max height for the parsed messages table */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+.details-list .table-container {
+    max-height: 300px; /* Set a larger max height for the details table */
+}
+
 .styled-table {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
     font-size: 1rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow-x: auto;
 }
 
 .styled-table th, .styled-table td {

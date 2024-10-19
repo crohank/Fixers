@@ -19,34 +19,42 @@
       <button type="submit" class="submit-btn">Parse FIX Message</button>
     </form>
 
-    <!-- Table to display parsed FIX messages (single column for field names) -->
+    <!-- Wrapper for parsed messages table -->
     <div class="message-list">
-      <table id="parsedMessages" class="styled-table">
-        <thead>
-          <tr>
-            <th>Parsed Messages</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Parsed messages will go here -->
-        </tbody>
-      </table>
+      <h2>Parsed Messages</h2>
+      <div class="table-container">
+        <table id="parsedMessages" class="styled-table">
+          <thead>
+            <tr>
+              <th>Parsed Messages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Parsed messages will go here -->
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <!-- Main table to display selected parsed FIX message details -->
-    <table id="parsedTable" class="styled-table">
-      <thead>
-        <tr>
-          <th>Field Number</th>
-          <th>Field Name</th>
-          <th>Value</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Detailed parsed data will go here -->
-      </tbody>
-    </table>
+    <!-- Wrapper for main parsed table -->
+    <div class="details-list">
+      <h2>Message Details</h2>
+      <div class="table-container details">
+        <table id="parsedTable" class="styled-table">
+          <thead>
+            <tr>
+              <th>Field Number</th>
+              <th>Field Name</th>
+              <th>Value</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Detailed parsed data will go here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script> <!-- Link to your JS file -->
