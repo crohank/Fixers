@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Tags</title>
+    <link rel="stylesheet" href="Upstyle.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="logo.png" alt="App Logo" class="logo">
+
+        <h1>Update fixLookup.mjs</h1>
+
+        <form class="update-form" action="/update-fixlookup" method="POST">
+            <div class="form-group">
+                <label for="fieldNumber">Field Number:</label>
+                <input type="text" id="fieldNumber" name="fieldNumber" required>
+            </div>
+
+            <div class="form-group">
+                <label for="desc">Description:</label>
+                <input type="text" id="desc" name="desc" required>
+            </div>
+
+            <div class="form-group">
+                <label for="enumValue">Enum Value (optional):</label>
+                <input type="text" id="enumValue" name="enumValue">
+            </div>
+
+            <div class="form-group">
+                <label for="enumDesc">Enum Description (optional):</label>
+                <input type="text" id="enumDesc" name="enumDesc">
+            </div>
+
+            <button type="submit" class="submit-btn">Update fixLookup.mjs</button>
+        </form>
+    </div>
+</body>
+</html>
